@@ -5,6 +5,7 @@
   "type": "module",
   "main": "electron-main.cjs",
   "scripts": {
+    "start": "node server.mjs",
     "dev": "vite",
     "build": "vite build && node build-ssg.js",
     "build:prod": "npm run build",
