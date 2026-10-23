@@ -1,0 +1,41 @@
+# ----------------------------------------------------------------------
+# Apache Rewrite Engine & Clean URLs
+# ----------------------------------------------------------------------
+
+# Prevent directory listing
+Options -Indexes
+
+# Custom 404 page
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Redirect old query string URL structure (post-viewer?slug=my-post-slug)
+  # to clean static folder URLs (/blog/my-post-slug/)
+  RewriteCond %{QUERY_STRING} ^slug=([^&]+) [NC]
+  RewriteRule ^post-viewer(?:\.html)?$ /blog/%1/? [R=301,L]
+
+  # 2. Redirect index.html or index.php to clean folder directory
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.(html|php)\ HTTP/ [NC]
+  RewriteRule ^(([^/]+/)*)index\.(html|php)$ /$1 [R=301,L]
+
+  # 3. Enforce trailing slash for directory routes to keep URLs canonical
+  # (e.g., /about -> /about/, /blog/some-post -> /blog/some-post/)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteCond %{REQUEST_URI} !(.*)\.(html|php|css|js|png|jpg|jpeg|gif|svg|ico|xml|json|txt|mp3|webmanifest)$ [NC]
+  RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+  # 4. Resolve folder indices or files if they exist
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 5. Internal rewrite of trailing slash directories to their index.html files
+  RewriteCond %{REQUEST_URI} ^/(.+)/$
+  RewriteCond %{DOCUMENT_ROOT}/%1/index.html -f
+  RewriteRule ^(.*)$ /%1/index.html [L]
+
+</IfModule>

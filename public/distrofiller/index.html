@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DistroFiller - Automate Your DistroKid Uploads</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #0b1a10;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+      
+      /* Subtle vertical gradient/blur background from the image */
+      .bg-bars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: repeating-linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.01),
+          rgba(255, 255, 255, 0.01) 80px,
+          transparent 80px,
+          transparent 160px
+        );
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .logo-icon {
+        background-color: #050a06;
+        color: #00FF55;
+        font-weight: 900;
+        padding: 8px 10px;
+        border-radius: 6px;
+        font-size: 1.4rem;
+        letter-spacing: -1px;
+      }
+      .logo-text {
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: #fff;
+      }
+      .logo-text span {
+        color: #00FF55;
+      }
+      .header-nav {
+        display: flex;
+        gap: 30px;
+      }
+      .header-nav a {
+        color: #8aa88a;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+      .header-nav a:hover, .header-nav a.active {
+        color: #00FF55;
+      }
+      
+      .hero {
+        max-width: 800px;
+        margin: 100px auto;
+        padding: 0 20px;
+        text-align: left;
+      }
+      
+      .status-badge {
+        display: inline-block;
+        border: 1px solid #005522;
+        color: #00FF55;
+        background-color: rgba(0, 255, 85, 0.05);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-family: monospace;
+        font-size: 0.85rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+      }
+      
+      h1 {
+        font-size: 4.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 30px;
+        letter-spacing: -1px;
+      }
+      h1 .highlight {
+        color: #00FF55;
+        display: block;
+      }
+      
+      p.description {
+        font-size: 1.4rem;
+        color: #99bb99;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        max-width: 700px;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        background-color: #00FF55;
+        color: #000;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 800;
+        padding: 16px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 255, 85, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(0, 255, 85, 0.4);
+      }
+      
+      .back-link {
+        display: inline-block;
+        margin-top: 50px;
+        color: #668866;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #00FF55;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-bars"></div>
+    
+    <header>
+      <div class="logo-container">
+        <div class="logo-icon">DF</div>
+        <div class="logo-text">Distro<span>Filler</span></div>
+      </div>
+
+      <div style="width: 150px;"></div>
+    </header>
+
+    <div class="hero">
+
+      
+      <h1>
+        Automate Your
+        <span class="highlight">DistroKid Uploads</span>
+      </h1>
+      
+      <p class="description">
+        The DistroFiller extension streamlines bulk fillings, mass metadata reading, and rapid album releases—including Suno AI generated songs. Stop copying manually and save time.
+      </p>
+      
+      <a href="https://distrofiller.com/" target="_blank" class="cta-button">Get DistroFiller Extension</a>
+      
+      <br>
+      <a href="/" class="back-link">← Return to Music Visualizer Pro</a>
+    </div>
+  </body>
+</html>

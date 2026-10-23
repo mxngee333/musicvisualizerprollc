@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Music Visualizer Pro</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="https://musicvisualizerpro.com/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="https://musicvisualizerpro.com/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://musicvisualizerpro.com/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="https://musicvisualizerpro.com/favicon.svg">
+  <link rel="apple-touch-icon" href="https://musicvisualizerpro.com/apple-touch-icon.png">
+  <link rel="manifest" href="https://musicvisualizerpro.com/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #ff007a;
+      --secondary-color: #7928ca;
+      --bg-color: #0d0d0d;
+      --text-color: #ffffff;
+      --glass-bg: rgba(25, 25, 35, 0.5);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --accent-color: #00FFCC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Subtle neon background glows */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(150px);
+      z-index: 0;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    body::before {
+      background-color: var(--primary-color);
+      top: 20%;
+      left: 20%;
+    }
+    body::after {
+      background-color: var(--secondary-color);
+      bottom: 20%;
+      right: 20%;
+    }
+
+    .error-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      position: relative;
+    }
+
+    .error-code {
+      font-size: 6rem;
+      font-weight: 800;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .error-desc {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 0, 122, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 0, 122, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      color: #ccc;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="error-card">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Visualizer Signal Lost</h1>
+    <p class="error-desc">We couldn't find the page you were looking for. It might have been moved, deleted, or never existed in this dimension.</p>
+    <div class="nav-buttons">
+      <a href="/" class="btn btn-primary">Go to App</a>
+      <a href="/blog/" class="btn btn-secondary">Visit Blog</a>
+    </div>
+  </div>
+</body>
+</html>
