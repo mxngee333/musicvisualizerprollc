@@ -1,11 +1,13 @@
 FROM node:24-alpine AS build
 WORKDIR /app
 
+ENV NODE_ENV=development
+
 # Install build dependencies
 RUN apk add --no-cache python3 make g++
 
 COPY package*.json ./
-RUN npm install
+RUN npm install --include=dev
 
 COPY . .
 RUN npm run build
